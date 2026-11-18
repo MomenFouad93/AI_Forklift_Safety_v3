@@ -1,0 +1,107 @@
+{
+    "camera_0": {
+        "norm_x": 0.0026,
+        "norm_y": 0.2103,
+        "norm_w": 0.9412,
+        "norm_h": 0.7897,
+        "x": 1,
+        "y": 53,
+        "w": 368,
+        "h": 199,
+        "physical_usb_path": "1-1",
+        "enabled": true
+    },
+    "camera_1": {
+        "norm_x": 0.0691,
+        "norm_y": 0.3492,
+        "norm_w": 0.9028,
+        "norm_h": 0.6508,
+        "x": 27,
+        "y": 88,
+        "w": 353,
+        "h": 164,
+        "physical_usb_path": "1-5",
+        "enabled": true
+    },
+    "camera_2": {
+        "norm_x": 0.0102,
+        "norm_y": 0.3056,
+        "norm_w": 0.9821,
+        "norm_h": 0.6944,
+        "x": 4,
+        "y": 77,
+        "w": 384,
+        "h": 175,
+        "physical_usb_path": "1-2",
+        "enabled": true
+    },
+    "camera_3": {
+        "norm_x": 0.05,
+        "norm_y": 0.16,
+        "norm_w": 0.9,
+        "norm_h": 0.7314,
+        "x": 19,
+        "y": 56,
+        "w": 355,
+        "h": 256,
+        "enabled": true,
+        "physical_usb_path": "1-4"
+    },
+    "settings": {
+        "com_port": "/dev/ttyUSB0",
+        "baud_rate": 9600,
+        "camera_mapping": [
+            "/dev/video0",
+            "/dev/video2",
+            "/dev/video4",
+            "/dev/video6"
+        ],
+        "camera_physical_paths": [
+            "1-1",
+            "1-5",
+            "1-2",
+            "1-4"
+        ],
+        "cameras_enabled": [
+            true,
+            true,
+            true,
+            true
+        ],
+        "_RELAY_MAPPING_NOTE": "Stations 1&4 share relay 2, stations 2&3 share relay 1. VERIFY with a multimeter that this matches the actual RM04U wiring before relying on it — if two stations are NOT meant to share one physical stop circuit, this is a wiring/config mismatch, not a software bug.",
+        "relay_mapping": [
+            2,
+            1,
+            1,
+            2
+        ],
+        "_WATCHDOG_NOTE": "v3: if ai_gui_system.py stops sending heartbeats (crash/freeze) for longer than hardware_worker.py's AI_WATCHDOG_TIMEOUT (3s, after a 5s startup grace period), every relay listed in watchdog_covered_relays is forced ON — fail-to-alarm, not fail-silent. Keep ai_watchdog_enabled=1 in production.",
+        "ai_watchdog_enabled": 1,
+        "watchdog_covered_relays": [1, 2, 3, 4],
+        "model_path": "yolov8n.pt",
+        "confidence": 0.34,
+        "on_delay": 0.2,
+        "off_delay": 10.0,
+        "boot_self_test": 1,
+        "hardware_coil_enabled": 1,
+        "alarm_auto_reset": 20.0,
+        "relay_mapping_b": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "relay_a_active": [
+            true,
+            true,
+            true,
+            true
+        ],
+        "relay_b_active": [
+            false,
+            false,
+            false,
+            false
+        ]
+    }
+}
